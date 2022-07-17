@@ -15,7 +15,7 @@ export class AppComponent {
 logoutUser()
 {
 localStorage.removeItem('token')
-this._router.navigate(['/products'])
+this._router.navigate(['/book'])
 }
 loggedUser()
 {

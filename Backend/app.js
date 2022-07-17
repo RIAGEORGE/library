@@ -90,8 +90,8 @@ app.post('/login', (req, res) => {
       imageUrl = req.body.imageUrl
      BookData.findByIdAndUpdate({"_id":id},
                                   {$set:{"bookId":bookId,
-                                  "productName":productName,
-                                  "productCode":productCode,
+                                  "bookName":bookName,
+                                  "bookCode":bookCode,
                                   "releaseDate":releaseDate,
                                   "description":description,
                                   "price":price,
@@ -105,7 +105,7 @@ app.post('/login', (req, res) => {
 app.delete('/remove/:id',(req,res)=>{
    
      id = req.params.id;
-     ProductData.findByIdAndDelete({"_id":id})
+     BookData.findByIdAndDelete({"_id":id})
      .then(()=>{
          console.log('success')
          res.send();

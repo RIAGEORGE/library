@@ -28,11 +28,11 @@ export class LoginComponent implements OnInit {
     .subscribe(
       res => {
         localStorage.setItem('token', res.token)
-        this._router.navigate(['/products'])
+        this._router.navigate(['/book'])
       },
       err => {
         console.log(err);
-        this._router.navigate(['/products'])
+        this._router.navigate(['/book'])
       }
     ) 
   }

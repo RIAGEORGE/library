@@ -4,8 +4,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
-import { ProductsComponent } from './products/products.component';
-import { NewProductComponent } from './newproduct/newproduct.component';
+import { BookComponent } from './book/Book.component';
+import { NewBookComponent } from './newbook/newbook.component';
 import {ProductService} from './productservice.service';
 import { LoginComponent } from './login/login.component';
 import {AuthService} from './auth.service';
@@ -16,8 +16,8 @@ import { UpdateProductComponent } from './update-product/update-product.componen
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent,
-    NewProductComponent,
+    BookComponent,
+    NewBookComponent,
     LoginComponent,
     UpdateProductComponent
   ],
