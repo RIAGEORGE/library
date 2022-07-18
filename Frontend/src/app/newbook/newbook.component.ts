@@ -1,31 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduct } from '../productmodel';
-import { ProductService } from '../productservice.service'
+import { IBook } from '../bookmodel';
+import { BookService } from '../bookservice.service'
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-newproduct',
-  templateUrl: './newproduct.component.html',
-  styleUrls: ['./newproduct.component.css']
+  selector: 'app-newbook',
+  templateUrl: './newbook.component.html',
+  styleUrls: ['./newbook.component.css']
 })
-export class NewProductComponent implements OnInit {
+export class NewBookComponent implements OnInit {
 
-  constructor(private productService: ProductService,private router: Router){  } 
-  productItem= {
-     productId :'',
-     productName:'',
-     productCode:'',
+  constructor(private bookService: BookService,private router: Router){  } 
+  bookItem= {
+     bookId :'',
+     bookName:'',
+     bookCode:'',
      releaseDate:'',
      description:'',
      price:'',
      starRating:'',
      imageUrl:''}
- // productItem: IProduct;
+ // bookItem: IBook;
   ngOnInit() {
   }
-  AddProduct()
+  AddBook()
   {    
-    this.productService.newProduct(this.productItem);
+    this.bookService.newBook(this.bookItem);
     console.log("Called");    
     alert("Success");
     this.router.navigate(['/']);

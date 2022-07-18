@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Routes,RouterModule} from '@angular/router';
 import { AuthGuard } from './auth.guard';
-import { ProductsComponent } from './products/products.component'
-import { NewProductComponent } from './newproduct/newproduct.component';
+import { BookComponent } from './book/book.component'
+import { NewBookComponent } from './newbook/newbook.component';
 import {LoginComponent} from './login/login.component';
-import { UpdateProductComponent } from './update-product/update-product.component';
+import { UpdateBookComponent } from './update-book/update-book.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/products',
+    redirectTo: '/book',
     pathMatch: 'full'
   },
   {
-    path: 'products',
-    component: ProductsComponent
+    path: 'book',
+    component:BookComponent
   },
   {
     path: 'login',
@@ -22,11 +22,11 @@ const routes: Routes = [
   },
   {path:'add', 
   canActivate: [AuthGuard],
-  component: NewProductComponent,
+  component: NewBookComponent,
 },
 {
   path:'update',
-  component:UpdateProductComponent
+  component:UpdateBookComponent
 }
 ];
 @NgModule({

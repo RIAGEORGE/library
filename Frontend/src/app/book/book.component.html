@@ -6,7 +6,7 @@
     <div class='card-body'>            
       <div class='table-responsive'>
         <table class='table'
-              *ngIf = 'products && products.length'>
+              *ngIf = 'book && book.length'>
           <thead>
             <tr>
               <th>
@@ -15,7 +15,7 @@
                   {{showImage? 'Hide' : 'Show'}} Image
                 </button>
               </th>
-              <th>Product</th>
+              <th>Book</th>
               <th>Code</th>
               <th>Available</th>
               <th>Price</th>
@@ -24,17 +24,17 @@
            
           </thead>
           <tbody>  
-              <tr *ngFor='let product of products'>
+              <tr *ngFor='let book of books'>
                   <td><img *ngIf='showImage'
-                    [src] = 'product.imageUrl' 
-                    [title] = 'product.productName'
+                    [src] = 'book.imageUrl' 
+                    [title] = 'book.bookName'
                     [style.width.px] = 'imageWidth' 
                     [style.margin.px] = 'imageMargin'></td>
-                  <td>{{ product.productName }}</td>
-                  <td>{{ product.productCode }}</td>
-                  <td>{{ product.releaseDate }}</td>
-                  <td>{{ product.price }}</td>
-                  <td>{{ product.starRating }}</td>
+                  <td>{{ book.bookName }}</td>
+                  <td>{{ book.bookCode }}</td>
+                  <td>{{ book.releaseDate }}</td>
+                  <td>{{ book.price }}</td>
+                  <td>{{ book.starRating }}</td>
                   <td>
                     <button class="btn btn-warning" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="editProduct(product)" style="margin-left: 20px;"> Edit</button>
                     <button class="btn btn-danger" style="cursor:pointer" *ngIf="_auth.loggedIn()"(click)="deleteProduct(product)"> Delete</button>
