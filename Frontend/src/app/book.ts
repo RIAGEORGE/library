@@ -1,7 +1,7 @@
-export interface IProduct{
-    productId: number,
-    productName: string,
-    productCode: string,
+export interface IBook{
+    bookId: number,
+    bookName: string,
+    bookCode: string,
     releaseDate: string,
     description: string,
     price:number,

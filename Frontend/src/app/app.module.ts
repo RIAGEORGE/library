@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { BookComponent } from './book/Book.component';
 import { NewBookComponent } from './newbook/newbook.component';
-import {ProductService} from './productservice.service';
+import {BookService} from './bookservice.service';
 import { LoginComponent } from './login/login.component';
 import {AuthService} from './auth.service';
 import {AuthGuard} from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
-import { UpdateProductComponent } from './update-product/update-product.component';
+import { UpdateBookComponent } from './update-book/update-book.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     BookComponent,
     NewBookComponent,
     LoginComponent,
-    UpdateProductComponent
+    UpdateBookComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,7 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AuthService,AuthGuard,ProductService,
+  providers: [AuthService,AuthGuard,BookService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,

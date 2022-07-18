@@ -4,39 +4,39 @@ import {HttpClient ,HttpResponse} from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class BookService {
   item= {
-    productId :'',
-    productName:'',
-    productCode:'',
+    bookId :'',
+    bookName:'',
+    bookCode:'',
     releaseDate:'',
     description:'',
     price:'',
     starRating:'',
     imageUrl:''}
   constructor( private http:HttpClient) { }
-  getProduct(id:any){
+  getBook(id:any){
     return this.http.get("http://localhost:3000/"+id);
   }
-  getProducts(){
-    return this.http.get("http://localhost:3000/products");
+  getBook(){
+    return this.http.get("http://localhost:3000/book");
   }
 
-  newProduct(item:any)
+  newBook(item:any)
   {   
-    return this.http.post("http://localhost:3000/insert",{"product":item})
+    return this.http.post("http://localhost:3000/insert",{"book":item})
     .subscribe(data =>{console.log(data)})
   }
-  deleteProduct(id:any)
+  deleteBook(id:any)
   {
 
     return this.http.delete("http://localhost:3000/remove/"+id)
 
   }
-  editProduct(product:any)
+  editBook(book:any)
   {
     console.log('client update')
-    return this.http.put("http://localhost:3000/update",product)
+    return this.http.put("http://localhost:3000/update",book)
     .subscribe(data =>{console.log(data)})
   }
 }

@@ -1,8 +1,8 @@
-export class IProduct{
+export class IBook{
     constructor(
-     public productId: number,
-     public productName: string,
-     public productCode: string,
+     public bookId: number,
+     public bookName: string,
+     public bookCode: string,
      public releaseDate: string,
      public description: string,
      public price:number,
